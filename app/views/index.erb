@@ -1,0 +1,29 @@
+<h1><%= @title %></h1>
+
+<table style="width:100%">
+  <tr>
+    <td>Title</td>
+    <td>Description</td>
+    <td>Location</td>
+  </tr>
+  <tr>
+    <%@meetups.each do |meetup|%>
+    <td><a href="/<%=meetup.id%>"><%= meetup.title %></a></td>
+    <td><%=meetup.description%></td>
+    <td><%=meetup.location%></td>
+  </tr>
+  <%end%>
+</table>
+
+<form action="/" method="post">
+  <label for="title"> Title </label>
+  <input type="text" name="title" required>
+
+  <label for="description"> Description </label>
+  <input type="body" name="description" required>
+
+  <label for="location"> Location </label>
+  <input type="text" name="location" required>
+
+  <input type="submit" value="Submit New Meetup">
+</form>

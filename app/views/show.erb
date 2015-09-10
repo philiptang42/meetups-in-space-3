@@ -1,0 +1,21 @@
+<h1><%= @meetup.title %></h1>
+<h3>Description</h3>
+<p><%= @meetup.description%></p>
+<h3>Location</h3>
+<p><%= @meetup.location %></p>
+
+<form action="/<%= @meetup.id %>" method="post">
+
+  <input type="submit" class="button" name="button" value="Join the Meetup">
+
+</form>
+
+<h4> PEOPLE WHO ARE GOING. GUARANTEED <h4?
+<ul>
+  <% @meetup.users.each do |user| %>
+  <li><img src="<%= user.avatar_url%>"><%= user.username%></li>
+  <%end%>
+</ul>
+
+
+<td><a href="/"><strong><i>Back to Available Meetups</i></strong></a></td>
